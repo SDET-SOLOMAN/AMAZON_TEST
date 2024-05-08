@@ -1,4 +1,6 @@
-
+import os
+from dotenv import load_dotenv
 class UserData:
-    email = "****3"
-    password = "***"
+    load_dotenv()
+    email = os.environ["email"]
+    password = os.environ["password"]

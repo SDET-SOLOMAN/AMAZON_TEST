@@ -9,3 +9,6 @@ class LoginLocators:
     NOT_NOW_LINK = ("css selector", "a#ap-account-fixup-phone-skip-link")
     LOG_IN_TEXT = ("css selector", "span#nav-link-accountList-nav-line-1")
     LOGIN_NAME = "Hello, Red"
+    CONDITIONS_OF_USE = ("xpath selector", "//div[@id='legalTextRow']/a[contains(text(), 'Conditions of Use')]")
+    PRIVACY_NOTICE = ("xpath selector", "//div[@id='legalTextRow']/a[contains(text(), 'Privacy Notice')]")
+    NEED_HELP = ("css selector", "span.a-expander-prompt")
