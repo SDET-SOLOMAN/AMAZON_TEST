@@ -1,4 +1,4 @@
 
 class UserData:
-    email = "red****@gmail.com"
-    password = "****"
+    email = "***"
+    password = "***"
