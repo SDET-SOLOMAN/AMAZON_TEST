@@ -29,4 +29,7 @@ pytest -s -v --aluredir results имя файла (results - имя папки �
 
 запуск allure:
 allure serve results
+
+сгенерировать отчет allure для запуска в любом месте:
+allure generate result
    
