@@ -20,7 +20,8 @@ class TestLogin:
         page = LoginPage(driver, self.url.base_url)
         page.open()
         page.login()
-        assert page.login_name() == self.login_locators.LOGIN_NAME
+        with allure.step("Check result"):
+            assert page.login_name() == self.login_locators.LOGIN_NAME
 
     @allure.title("test logout")
     @allure.description("check logout")
@@ -34,5 +35,6 @@ class TestLogin:
         page.login()
         page.hold_mouse_to_account()
         page.clik_to_logout()
-        assert page.check_sinin_page() == self.login_locators.SIN_IN_TEXT
+        with allure.step("Check result"):
+            assert page.check_sinin_page() == self.login_locators.SIN_IN_TEXT
 
