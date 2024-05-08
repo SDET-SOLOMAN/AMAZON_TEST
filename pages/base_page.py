@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,15 +18,21 @@ class BasePage:
         self.url = url
 
     def login(self):
-        self.element_is_visible(LoginLocators.ACCOUNT_LINK).click()
-        self.element_is_visible(self.locators.EMAIL_OR_PHONE_FIELD).send_keys(self.user.email)
-        self.element_is_visible(self.locators.CONTINUE_BTN).click()
-        self.element_is_visible(self.locators.PASSWORD_FILD).send_keys(self.user.password)
-        self.element_is_visible(self.locators.SIGNIN_BTN).click()
+        with allure.step("Click to login menu"):
+            self.element_is_visible(LoginLocators.ACCOUNT_LINK).click()
+        with allure.step("Enter email"):
+            self.element_is_visible(self.locators.EMAIL_OR_PHONE_FIELD).send_keys(self.user.email)
+        with allure.step("Click to continue btn"):
+            self.element_is_visible(self.locators.CONTINUE_BTN).click()
+        with allure.step("Enter password"):
+            self.element_is_visible(self.locators.PASSWORD_FILD).send_keys(self.user.password)
+        with allure.step("Click to sign_in btn"):
+            self.element_is_visible(self.locators.SIGNIN_BTN).click()
         # self.element_is_visible(self.locators.NOT_NOW_LINK).click()
 
     def open(self):
-        self.driver.get(self.url)
+        with allure.step("Open amazon site"):
+            self.driver.get(self.url)
 
     def element_is_clickable(self, locator, timeout=timeout):
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
