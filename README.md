@@ -27,4 +27,6 @@ pytest -s -v -m "smoke or regression" имя файла
 запуск файла с allure:
 pytest -s -v --aluredir results имя файла (results - имя папки куда будут сохранятся отчеты. Можно называть как будет удобно)
 
+запуск allure
+allure serve results
    
