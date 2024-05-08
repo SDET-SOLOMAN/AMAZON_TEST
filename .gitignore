@@ -34,3 +34,5 @@ screenshots/
 allure-results/
 
 allure-report/
+
+tests/login/results/
