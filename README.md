@@ -18,6 +18,13 @@ activate  venv\Scripts\activate
 6. git commit -m "Описание изменений" (создаем коммит для нашей ветки)
 7. git push -u origin <имя нашей ветки> (пушим нашу ветку в репозиторий)
 
-запууск отдельного файла pytest -s -v имя файла
+запуск отдельного файла pytest -s -v имя файла
 pytest -s -v --setup-show файл покажит какие фиктуры и настройки запускаються
+
+запуск файла с маркировкой "smoke", "regression":
+pytest -s -v -m "smoke or regression" имя файла
+
+запуск файла с allure:
+pytest -s -v --aluredir results имя файла (results - имя папки куда будут сохранятся отчеты. Можно называть как будет удобно)
+
    
