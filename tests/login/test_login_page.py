@@ -23,6 +23,7 @@ class TestLogin:
         with allure.step("Check result"):
             assert page.login_name() == self.login_locators.LOGIN_NAME
 
+
     @allure.title("test logout")
     @allure.description("check logout")
     @allure.severity(allure.severity_level.BLOCKER)
