@@ -5,6 +5,7 @@ from locators.main_locators import MainLocators
 from src.urls import Urls
 from locators.login_locators import LoginLocators
 
+
 @allure.epic("test login and logout pages")
 class TestLogin:
     url = Urls()
