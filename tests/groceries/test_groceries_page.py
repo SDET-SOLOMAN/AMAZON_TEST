@@ -1,5 +1,5 @@
 import pytest
-from locators.groceries_locators import GroceriesLocators
+from src.groceries_data import GroceriesData
 from pages.groceries_page import GroceriesPage
 from src.urls import Urls
 
@@ -7,9 +7,9 @@ from src.urls import Urls
 class TestGroceries:
 
     url = Urls()
-    locators = GroceriesLocators()
+    data = GroceriesData()
 
-    @pytest.mark.parametrize("products", locators.product_cards)
+    @pytest.mark.parametrize("products", data.product_cards)
     def test_verify_navigation_of_product_cards(self, driver, products):
         page = GroceriesPage(driver, self.url.groceries_url)
         page.open()

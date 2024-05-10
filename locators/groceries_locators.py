@@ -8,16 +8,8 @@ class GroceriesLocators:
     HOUSEHOLD_ESSENTIALS = ("xpath", "(//div[@class='bxc-grid__content   bxc-grid__content--light  celwidget'])[6]")
     BEVERAGES = ("xpath", "(//div[@class='bxc-grid__content   bxc-grid__content--light  celwidget'])[7]")
     PET_FOOD = ("xpath", "(//div[@class='bxc-grid__content   bxc-grid__content--light  celwidget'])[8]")
+
     SEARCH_BOX = ("css selector", "input[id='twotabsearchtextbox']")
     RESULT_TEXT = ("css selector", "span[class='a-color-state a-text-bold']")
 
-    product_cards = [
-        [PRODUCE, 'produce'],
-        [MEAT_SEAFOOD, 'meat and seafood'],
-        [DAIRY_EGGS_CHEESE, 'dairy, cheese & eggs'],
-        [SNACKS_PANTRY_STAPLES, 'snacks'],
-        [BEAUTY_HEALTH_PERSONAL_CARE, 'beauty, health and personal care'],
-        [HOUSEHOLD_ESSENTIALS, 'household essentials'],
-        [BEVERAGES, 'beverages'],
-        [PET_FOOD, 'pet food']
-    ]
+
