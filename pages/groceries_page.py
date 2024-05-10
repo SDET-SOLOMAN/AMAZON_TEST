@@ -24,5 +24,3 @@ class GroceriesPage(BasePage):
             return actual_result_text == expected_text and actual_search_box_text == expected_text
         except TimeoutException:
             return False
-
-
