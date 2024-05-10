@@ -2,7 +2,7 @@ import allure
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
-from src.user_data import UserData
+#from src.user_data import UserData
 from locators.login_locators import LoginLocators
 from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.webelement import WebElement
@@ -11,7 +11,7 @@ from selenium.webdriver.remote.webelement import WebElement
 class BasePage:
     timeout = 10
     locators = LoginLocators()
-    user = UserData()
+    #user = UserData()
 
     def __init__(self, driver, url):
         self.driver = driver
