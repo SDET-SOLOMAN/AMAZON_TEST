@@ -22,3 +22,4 @@ class TestGroceries:
             page.click_on_product_card(products[0])
 
         assert page.is_right_product_catalog(products[1])
+
