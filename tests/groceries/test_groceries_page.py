@@ -30,18 +30,18 @@ class TestGroceries:
         assert page.is_right_product_catalog(products[1])
 
     @pytest.mark.smoke
+    @allure.title("Verify that the entered zip code is displayed in the Available Stores section of the Groceries page")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_verify_displaying_zip_code_on_available_stores_section(self, driver):
         page = GroceriesPage(driver, self.url.groceries_url)
-        page.open()
-        input_box = page.element_is_visible(self.locators.INPUT_ZIP_CODE)
-        input_box.send_keys(self.data.zip_code)
-        time.sleep(4)
-        page.element_is_clickable(self.locators.CHANGE_LOCATION).click()
 
-        wait(driver, 10).until(EC.text_to_be_present_in_element(self.locators.SHOPPING_OUTSIDE_TEXT, self.data.zip_code))
+        with allure.step("Navigate to the groceries page"):
+            page.open()
+        with allure.step("Enter the zip code - 10002 in the input field"):
+            page.type_zip_code(self.data.zip_code)
+        with allure.step("Click on 'Change location' button"):
+            page.element_is_clickable(self.locators.CHANGE_LOCATION).click()
 
-        shopping_outside_text = page.element_is_visible(self.locators.SHOPPING_OUTSIDE_TEXT).text
-        stores_available_header = page.element_is_visible(self.locators.STORES_AVAILABLE_TEXT).text
+        page.text_is_present(self.locators.SHOPPING_OUTSIDE_TEXT, self.data.zip_code)
 
-        assert "10001" in shopping_outside_text
-        assert "10001" in stores_available_header
+        assert page.is_zip_code_displayed(self.data.zip_code)
