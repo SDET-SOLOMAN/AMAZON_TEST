@@ -1,6 +1,5 @@
 from pages.base_page import BasePage
 from locators.groceries_locators import GroceriesLocators
-from src.groceries_data import GroceriesData as data
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC

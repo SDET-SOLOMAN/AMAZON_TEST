@@ -1,3 +1,5 @@
+
+
 class GroceriesLocators:
     PRODUCE = ("xpath", "(//div[@class='bxc-grid__content   bxc-grid__content--light  celwidget'])[1]")
     MEAT_SEAFOOD = ("xpath", "(//div[@class='bxc-grid__content   bxc-grid__content--light  celwidget'])[2]")

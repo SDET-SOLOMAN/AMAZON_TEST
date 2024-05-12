@@ -1,13 +1,9 @@
-import time
-
 import pytest
 import allure
 from src.groceries_data import GroceriesData
 from pages.groceries_page import GroceriesPage
 from locators.groceries_locators import GroceriesLocators
 from src.urls import Urls
-from selenium.webdriver.support.ui import WebDriverWait as wait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 @allure.epic("Test groceries page")
@@ -29,7 +25,6 @@ class TestGroceries:
 
         assert page.is_right_product_catalog(products[1])
 
-    @pytest.mark.smoke
     @allure.title("Verify that the entered zip code is displayed in the Available Stores section of the Groceries page")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_verify_displaying_zip_code_on_available_stores_section(self, driver):
