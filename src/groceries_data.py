@@ -3,6 +3,7 @@ from locators.groceries_locators import GroceriesLocators
 
 class GroceriesData:
     locators = GroceriesLocators()
+    zip_code = "10002"
 
     product_cards = [
         [locators.PRODUCE, 'produce'],
@@ -14,3 +15,4 @@ class GroceriesData:
         [locators.BEVERAGES, 'beverages'],
         [locators.PET_FOOD, 'pet food']
     ]
+
