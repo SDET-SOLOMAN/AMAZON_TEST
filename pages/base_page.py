@@ -55,6 +55,15 @@ class BasePage:
 
     def find_element(self,locator):
         return self.driver.find_element(locator)
+    
+    def scroll_to(self, element):
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+    def current_page(self) -> str:
+        return self.driver.current_url
+    
+    def get_text(self, locator: tuple) -> str:
+        return self.element_is_visible(locator, 5).text
 
     def element_is_present(self, locator, timeout=timeout):
         return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
