@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from locators.login_locators import LoginLocators
 from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.webelement import WebElement
+from amazoncaptcha import AmazonCaptcha
 
 
 class BasePage:
@@ -28,7 +29,7 @@ class BasePage:
             self.element_is_visible(self.locators.PASSWORD_FILD).send_keys(self.user.password)
         with allure.step("Click to sign_in btn"):
             self.element_is_visible(self.locators.SIGNIN_BTN).click()
-        # self.element_is_visible(self.locators.NOT_NOW_LINK).click()
+            self.element_is_visible(self.locators.NOT_NOW_LINK).click()
 
     def open(self):
         with allure.step("Open amazon site"):
@@ -54,6 +55,9 @@ class BasePage:
 
     def find_element(self,locator):
         return self.driver.find_element(locator)
+
+    def element_is_present(self, locator, timeout=timeout):
+        return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
 
 
 
