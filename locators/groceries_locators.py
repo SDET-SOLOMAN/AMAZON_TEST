@@ -16,4 +16,5 @@ class GroceriesLocators:
     CHANGE_LOCATION = ("css selector", "input[class='a-button-input']")
     SHOPPING_OUTSIDE_TEXT = ("xpath", "//h4[contains(text(), 'Shopping outside')]")
     STORES_AVAILABLE_TEXT = ("xpath", "//h4[contains(text(), 'Shop stores available')]")
+    ERROR_ZIP_CODE_MSG = ("css selector", "div[class='a-alert-content']")
 

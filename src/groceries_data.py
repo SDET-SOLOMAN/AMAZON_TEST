@@ -5,6 +5,10 @@ class GroceriesData:
     locators = GroceriesLocators()
     zip_code = "10002"
 
+    zip_codes = [
+        "1", "1000", "100022", "331003313"
+    ]
+
     product_cards = [
         [locators.PRODUCE, 'produce'],
         [locators.MEAT_SEAFOOD, 'meat and seafood'],
