@@ -46,7 +46,7 @@ class TestLogin:
     def test_check_the_modal_window(self, driver):
         page = LoginPage(driver, self.url.base_url)
         page.open()
-        time.sleep(10)
+        # time.sleep(10)
         page.hold_mouse_to_account()
         modal_window = page.check_modal_window_sign_in_is_displayed()
         with allure.step("Check result"):
@@ -57,7 +57,7 @@ class TestLogin:
     def test_check_option_forgot_password(self, driver):
         page = LoginPage(driver, self.url.base_url)
         page.open()
-        time.sleep(10)
+        # time.sleep(10)
         page.click_forgot_password_link()
         expected_text = "Password assistance"
         actual_text = page.get_text(self.login_locators.PASSWORD_ASSISTANCE)
@@ -69,7 +69,7 @@ class TestLogin:
     def test_check_need_help_link(self, driver):
         page = LoginPage(driver, self.url.base_url)
         page.open()
-        time.sleep(10)
+        # time.sleep(10)
         page.click_need_help_link()
         with allure.step("Check result"):
             assert page.check_need_help_drop_down() == self.login_locators.DROP_DOWN_NEED_HELP
@@ -79,7 +79,7 @@ class TestLogin:
     def test_change_the_email(self, driver):
         page = LoginPage(driver, self.url.base_url)
         page.open()
-        time.sleep(10)
+        # time.sleep(10)
         email_field = page.change_the_email()
         with allure.step("Check result"):
             assert email_field is True, 'User can type new email or phone number'
@@ -89,7 +89,7 @@ class TestLogin:
     def test_check_email_error_message(self, driver):
         page = LoginPage(driver, self.url.base_url)
         page.open()
-        time.sleep(10)
+        # time.sleep(10)
         page.click_to_continue_button_with_empty_email()
         expected_text = "Enter your email or mobile phone number"
         actual_text = page.get_text(self.login_locators.ERROR_MESSAGE_EMPTY_EMAIL)
@@ -102,7 +102,7 @@ class TestLogin:
     def test_check_privacy_notice_link_is_clickable(self, driver):
         page = LoginPage(driver, self.url.base_url)
         page.open()
-        time.sleep(10)
+        # time.sleep(10)
         page.click_privacy_notice_link()
         with allure.step("Check result"):
             assert page.check_privacy_notice_page() == self.login_locators.PRIVACY_NOTICE_TEXT
