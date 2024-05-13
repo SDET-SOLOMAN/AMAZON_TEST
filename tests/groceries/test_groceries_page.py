@@ -42,14 +42,14 @@ class TestGroceries:
         assert page.is_zip_code_displayed(self.data.zip_code)
 
     @pytest.mark.parametrize("zip_codes", data.zip_codes)
-    def test_verify_error_message_if_postal_code_less_than_six_digit(self, driver, zip_codes):
+    @pytest.mark.smoke
+    def test_verify_that_error_msg_is_displayed_after_entering_invalid_zip_code(self, driver, zip_codes):
         page = GroceriesPage(driver, self.url.groceries_url)
         page.open()
 
         page.type_zip_code(zip_codes)
         page.element_is_clickable(self.locators.CHANGE_LOCATION).click()
-        error_msg = page.element_is_visible(self.locators.ERROR_ZIP_CODE_MSG).text
 
-        assert "Please enter a valid zip code" == error_msg
+        assert page.is_zip_code_error_msg_displayed(self.data.zip_code_error_msg)
 
 
