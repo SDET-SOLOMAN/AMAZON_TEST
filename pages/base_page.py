@@ -68,5 +68,8 @@ class BasePage:
     def element_is_present(self, locator, timeout=timeout):
         return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
 
+    def text_present(self, locator, text, timeout=timeout):
+        return wait(self.driver, timeout).until(EC.text_to_be_present_in_element(locator, text))
+
 
 

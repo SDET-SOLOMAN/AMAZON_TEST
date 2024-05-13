@@ -1,8 +1,11 @@
+import allure
+
 from pages.base_page import BasePage
 from locators.groceries_locators import GroceriesLocators
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
+from src.groceries_data import GroceriesData
 
 
 def peel_text(text, symbol):
@@ -12,9 +15,11 @@ def peel_text(text, symbol):
 class GroceriesPage(BasePage):
 
     locators = GroceriesLocators
+    data = GroceriesData()
 
     def click_on_product_card(self, locator):
-        self.element_is_clickable(locator).click()
+        with allure.step("Click to product card"):
+            self.element_is_clickable(locator).click()
 
     def is_right_product_catalog(self, product_name):
         try:
@@ -41,6 +46,8 @@ class GroceriesPage(BasePage):
         input_box = self.element_is_visible(self.locators.INPUT_ZIP_CODE)
         input_box.send_keys(zipcode)
 
-    def text_is_present(self, locator, text):
-        wait(self.driver, 10).until(
-            EC.text_to_be_present_in_element(locator, text))
+    def text_is_present(self):
+        # wait(self.driver, 10).until(
+        #     EC.text_to_be_present_in_element(locator, text))
+        self.text_present(self.locators.SHOPPING_OUTSIDE_TEXT, self.data.zip_code)
+

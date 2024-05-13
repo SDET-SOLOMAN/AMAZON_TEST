@@ -1,6 +1,7 @@
 from locators.groceries_locators import GroceriesLocators
 
 
+
 class GroceriesData:
     locators = GroceriesLocators()
     zip_code = "10002"
