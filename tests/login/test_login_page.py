@@ -1,3 +1,5 @@
+import time
+
 import allure
 import pytest
 from pages.login_page import LoginPage
@@ -38,3 +40,138 @@ class TestLogin:
         with allure.step("Check result"):
             assert page.check_sinin_page() == self.login_locators.SIN_IN_TEXT
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @allure.title("test details link")
+    @allure.description("check details link is clickable")
+    def test_check_details_link(self, driver):
+        page = LoginPage(driver, self.url.base_url)
+        page.open()
+        time.sleep(10)
+        page.click_detail_link()
+        actual_text = page.get_text(self.login_locators.DETAIL_TITLE_MODAL_WINDOW)
+        expected_text = '"Keep Me Signed In" Checkbox'
+        with allure.step("Check result"):
+            assert actual_text == expected_text, f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
+
+    @allure.title("test business link")
+    @allure.description("check business link is clickable")
+    def test_check_business_link(self, driver):
+        page = LoginPage(driver, self.url.base_url)
+        page.open()
+        time.sleep(10)
+        page.click_business_link()
+        actual_text = page.get_text(self.login_locators.SIGN_IN_BUSINESS_TITLE)
+        expected_text = 'Sign in with business credentials'
+        with allure.step("Check result"):
+            assert actual_text == expected_text, f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
+
+    @allure.title("negative test incorrect email address")
+    @allure.description("check incorrect email address")
+    def test_negative_email_address(self, driver):
+        page = LoginPage(driver, self.url.base_url)
+        page.open()
+        time.sleep(10)
+        page.type_invalid_email()
+        actual_text = page.get_text(self.login_locators.ERROR_MESSAGE_INCORRECT_EMAIL)
+        expected_text = 'There was a problem We cannot find an account with that email address'
+        with allure.step("Check result"):
+            assert actual_text in expected_text, f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
+
+    @allure.title("test conditions of use_link")
+    @allure.description("check conditions of use_link is clickable")
+    def test_check_conditions_of_use_link(self, driver):
+        page = LoginPage(driver, self.url.base_url)
+        page.open()
+        time.sleep(10)
+        page.click_to_conditions_of_use_link()
+        with allure.step("Check result"):
+            assert page.checking_title_page() == self.login_locators.TITLE_TEXT_CONDITION_PAGE
+
+    @allure.title("test continue button")
+    @allure.description("check continue button is clickable")
+    def test_check_continue_btn(self, driver):
+        page = LoginPage(driver, self.url.base_url)
+        page.open()
+        time.sleep(10)
+        page.click_to_continue_btn()
+        with allure.step("Check result"):
+            assert page.checking_title_password_page() == self.login_locators.PASSWORD_TEXT
+
+    @allure.title("test sign in btn in modal window")
+    @allure.description("check sign in btn in modal window is clickable")
+    def test_check_sign_in_btn_in_modal_window(self, driver):
+        page = LoginPage(driver, self.url.base_url)
+        page.open()
+        time.sleep(10)
+        page.click_to_sign_in_btn_in_modal_window()
+        actual_text = page.get_text(self.login_locators.SIN_IN_PAGE)
+        expected_text = 'Sign in'
+        with allure.step("Check result"):
+            assert actual_text in expected_text, f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
