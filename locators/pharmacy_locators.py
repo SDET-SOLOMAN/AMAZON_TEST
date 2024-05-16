@@ -2,6 +2,7 @@
 class PharmacyLocators:
     MEDICAL_CARE_LINK = ("xpath", "//*[@id='nav_link_allhealthingress']")
     PHARMACY_LINK = ("xpath", "//a[contains(@href, 'pharmacy')]/div/img")
+    PHARMACY_POPUP_BOX = ("xpath", "//*[@id='nav-flyout-health']")
     PHARMACY_LOGO = ("xpath", "//*[@id='desktop-pharmacy-logo']//div[1]")
     ONE_MEDICAL = ("xpath", "//*[@title='prime one medical']")
     SIGN_UP_SIGN_IN = ("xpath", "//*[@aria-label='Sign up']")

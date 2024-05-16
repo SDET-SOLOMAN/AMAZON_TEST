@@ -9,7 +9,8 @@ from src.urls import Urls
 class TestPharmacyPage:
     url = Urls()
 
-    @allure.title("Verify Prime savings at Amazon Pharmacy is present after redirection from pharmacy page")
+    @allure.title("TC_003.002 | TC Verify that 'Prime savings at Amazon Pharmacy is present when redirected to the "
+                  "Prime saving page")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.smoke
     def test_verify_prime_saving_title(self, driver):
