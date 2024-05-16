@@ -7,3 +7,4 @@ class UserData:
     email = os.environ["email"]
     password = os.environ["password"]
 
+

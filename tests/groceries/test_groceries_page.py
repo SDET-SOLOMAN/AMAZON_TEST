@@ -28,18 +28,20 @@ class TestGroceries:
     @allure.title("Verify that the entered zip code is displayed in the Available Stores section of the Groceries page")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_verify_displaying_zip_code_on_available_stores_section(self, driver):
-        page = GroceriesPage(driver, self.url.groceries_url)
-
+        page = GroceriesPage(driver, self.url.base_url)
+        page1 = GroceriesPage(driver, self.url.groceries_url)
+        with allure.step("Open Amazon page"):
+            page.open()
         with allure.step("Navigate to the groceries page"):
-            page.open
+            page1.open()
         with allure.step("Enter the zip code - 10002 in the input field"):
             page.type_zip_code(self.data.zip_code)
         with allure.step("Click on 'Change location' button"):
             page.element_is_clickable(self.locators.CHANGE_LOCATION).click()
-
-        page.text_is_present(self.locators.SHOPPING_OUTSIDE_TEXT, self.data.zip_code)
-
-        assert page.is_zip_code_displayed(self.data.zip_code)
+        with allure.step("Check search text is present"):
+            page.text_is_present()
+        with allure.step("Assert zip code is correct"):
+            assert page.is_zip_code_displayed(self.data.zip_code)
 
     @pytest.mark.parametrize("zip_codes", data.zip_codes)
     @allure.title("Verify that an error message appears after entering a postal code that is greater and less than 5 digits")
