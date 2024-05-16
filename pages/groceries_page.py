@@ -33,6 +33,10 @@ class GroceriesPage(BasePage):
 
         return zipcode in shopping_outside_text and zipcode in stores_available_header
 
+    def is_zip_code_error_msg_displayed(self, expected_error):
+        error_msg = self.element_is_visible(self.locators.ERROR_ZIP_CODE_MSG).text
+        return expected_error == error_msg
+
     def type_zip_code(self, zipcode):
         input_box = self.element_is_visible(self.locators.INPUT_ZIP_CODE)
         input_box.send_keys(zipcode)
