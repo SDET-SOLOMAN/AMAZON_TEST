@@ -108,7 +108,7 @@ class TestLogin:
 
 
 
-    @allure.title("test details link")
+    @allure.title("TC_005.006 |Verify that 'Keep Me Signed In' Checkbox modal window appears")
     @allure.description("check details link is clickable")
     def test_check_details_link(self, driver):
         page = LoginPage(driver, self.url.base_url)
@@ -120,7 +120,7 @@ class TestLogin:
         with allure.step("Check result"):
             assert actual_text == expected_text, f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
 
-    @allure.title("test business link")
+    @allure.title("TC_005.007 |Verify that Shop on Amazon Business link redirects to amazon business sign in")
     @allure.description("check business link is clickable")
     def test_check_business_link(self, driver):
         page = LoginPage(driver, self.url.base_url)
@@ -132,7 +132,7 @@ class TestLogin:
         with allure.step("Check result"):
             assert actual_text == expected_text, f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
 
-    @allure.title("negative test incorrect email address")
+    @allure.title("TC_005.009 | Verify that when the user is trying to log in, the user cannot enter an incorrect email")
     @allure.description("check incorrect email address")
     def test_negative_email_address(self, driver):
         page = LoginPage(driver, self.url.base_url)
@@ -144,7 +144,7 @@ class TestLogin:
         with allure.step("Check result"):
             assert actual_text in expected_text, f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
 
-    @allure.title("test conditions of use_link")
+    @allure.title("TC_005.01 |Verify that Conditions of Use link is clickable.")
     @allure.description("check conditions of use_link is clickable")
     def test_check_conditions_of_use_link(self, driver):
         page = LoginPage(driver, self.url.base_url)
@@ -154,7 +154,7 @@ class TestLogin:
         with allure.step("Check result"):
             assert page.checking_title_page() == self.login_locators.TITLE_TEXT_CONDITION_PAGE
 
-    @allure.title("test continue button")
+    @allure.title("TC_005.010 | Verify that the button 'continue' is clickable.")
     @allure.description("check continue button is clickable")
     def test_check_continue_btn(self, driver):
         page = LoginPage(driver, self.url.base_url)
@@ -164,7 +164,7 @@ class TestLogin:
         with allure.step("Check result"):
             assert page.checking_title_password_page() == self.login_locators.PASSWORD_TEXT
 
-    @allure.title("test sign in btn in modal window")
+    @allure.title("TC_005.011 | Verify that the button 'Sign in' is clicable in modal window.")
     @allure.description("check sign in btn in modal window is clickable")
     def test_check_sign_in_btn_in_modal_window(self, driver):
         page = LoginPage(driver, self.url.base_url)
