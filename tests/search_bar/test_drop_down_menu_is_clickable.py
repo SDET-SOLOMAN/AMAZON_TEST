@@ -15,7 +15,7 @@ class TestSearchBar:
     drop_down_locators = SearchBarLocators()
 
     @pytest.mark.xfail
-    @allure.title("Verify that the drop-down menu in the search box is clickable")
+    @allure.title("TC_002.002 | Verify that the drop-down menu in the search box is clickable")
     @allure.severity(allure.severity_level.NORMAL)
     def test_drop_down_menu(self, driver, captcha):
         page = SearchBarPage(driver, self.url.base_url)
