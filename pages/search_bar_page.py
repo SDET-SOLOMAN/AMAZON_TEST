@@ -14,3 +14,8 @@ class SearchBarPage(BasePage):
 
     def get_text(self, locator):
         return self.element_is_visible(locator).text
+
+    def navigate_and_click_on_search_field(self):
+        self.element_is_visible(SearchBarLocators.SEARCH_FIELD).click()
+
+
