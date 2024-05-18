@@ -11,6 +11,20 @@ class LoginLocators:
     LOGIN_NAME = "Hello, Red"
     SIN_IN_TEXT = "Sign in"
     CONDITIONS_OF_USE = ("xpath", "//div[@id='legalTextRow']/a[contains(text(), 'Conditions of Use')]")
+    PRIVACY_NOTICE = ("xpath", "//div[@id='legalTextRow']/a[contains(text(), 'Privacy Notice')]")
+    NEED_HELP = ("css selector", "span.a-expander-prompt")
+    SIN_OUT = ("css selector", "a#nav-item-signout")
+    SIN_IN_PAGE = ("css selector", "h1.a-spacing-small")
+    LINK_DETAILS = ("css selector", 'a#remember_me_learn_more_link')
+    LINK_SHOP_ON_AMAZON_BUSINESS = ("xpath", '//*[contains(text(), "Shop on Amazon Business")]')
+    DETAIL_TITLE_MODAL_WINDOW = ("xpath", "//h4[text()='\"Keep Me Signed In\" Checkbox']")
+    SIGN_IN_BUSINESS_TITLE = ("css selector", '.a-box .a-spacing-small')
+    ERROR_MESSAGE_INCORRECT_EMAIL = ("xpath", "//*[contains(text(), 'We cannot find an account with that email address')]")
+    TITLE_CONDITION_OF_USE = ("xpath", "//h1[contains(text(), 'Conditions of Use')]")
+    TITLE_TEXT_CONDITION_PAGE = 'Conditions of Use'
+    PASSWORD_PAGE = ("xpath", "//*[contains(text(), 'Password')]")
+    PASSWORD_TEXT = 'Password'
+    SIGN_IN_BTN_IN_MODAL_WINDOW = ("xpath", '//*[text()="Sign in"]')
     PRIVACY_NOTICE = ("css selector", "a[href*='notification_privacy_notice']")
     NEED_HELP = ("css selector", "span.a-expander-prompt")
     SIN_OUT = ("css selector", "a#nav-item-signout")
