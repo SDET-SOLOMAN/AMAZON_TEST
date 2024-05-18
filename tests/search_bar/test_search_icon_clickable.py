@@ -18,7 +18,7 @@ class TestSearchBar:
     search_bar_locators = SearchBarLocators()
 
 
-    def test_search_icon_is_clickable(self, driver):
+    def test_search_icon_is_clickable(self, driver, captcha):
         page = SearchBarPage(driver, self.url.base_url)
         page.open()
         time.sleep(10)

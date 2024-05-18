@@ -53,7 +53,7 @@ class BasePage:
     def hold_mouse_on_element(self, locator):
         ActionChains(self.driver).move_to_element(self.element_is_clickable(locator)).perform()
 
-    def find_element(self,locator):
+    def find_element(self, locator):
         return self.driver.find_element(locator)
     
     def scroll_to(self, element):
