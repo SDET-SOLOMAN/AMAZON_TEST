@@ -19,12 +19,12 @@ class TestLogin:
     @allure.severity(allure.severity_level.BLOCKER)
     @pytest.mark.regression
     @pytest.mark.smoke
-    def test_login(self, driver):
+    def test_login(self, driver, captcha):
         page = LoginPage(driver, self.url.base_url)
         page.open()
         page.login()
         with allure.step("Check result"):
-           assert page.login_name() == self.login_locators.LOGIN_NAME
+            assert page.login_name() == self.login_locators.LOGIN_NAME
 
     @allure.title("test logout")
     @allure.description("check logout")

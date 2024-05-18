@@ -25,3 +25,8 @@ class LoginLocators:
     ERROR_MESSAGE_EMPTY_EMAIL = ("xpath", '//*[contains(text(), "Enter your email or mobile phone number")]')
     PRIVACY_NOTICE_PAGE = ("xpath", "//h1[text()='Amazon.com Privacy Notice'] ")
     PRIVACY_NOTICE_TEXT = 'Amazon.com Privacy Notice'
+    SHOPPING_CART = ("css selector", "div#nav-cart-count-container")
+    FIRST_LIST_ITEMS_MAIN_PAGE = ("css selector",  "div[data-csa-c-item-id='amzn1.asin.B0CV244FWB']")
+    ADD_TO_CART_BTN = ("css selector", "input#add-to-cart-button")
+    TITLE_SHOPPING_CART = ("xpath", "(//*[contains(text(), 'Shopping Cart')]) [2]")
+    COUNTER_ITEMS_SHOPPING_CART = ("css selector", "span#nav-cart-count")
