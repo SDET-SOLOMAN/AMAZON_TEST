@@ -51,3 +51,17 @@ def test_check_help_at_sign_in_page(driver, captcha):
     page.click_on_sign_in_page_help_link()
     page.switch_to_second_window()
     page.should_be_customer_service_page()
+
+@pytest.mark.smoke
+@allure.title("TC_001.006")
+@allure.description("Verify that clicking on -To see prior version, click here- redirects the user to the prior version of privacy notice")
+@allure.severity(allure.severity_level.NORMAL)
+def test_check_prior_notice_version_link(driver, captcha):
+    page = HelpPage(driver, Urls.base_url)
+    page.open()
+    page.scroll_to_privacy_notice_link()
+    page.click_on_privacy_notice_link()
+    page.click_on_prior_version_privacy_link()
+    page.switch_to_second_window()
+    page.should_be_change_privacy_notice_page()
+
