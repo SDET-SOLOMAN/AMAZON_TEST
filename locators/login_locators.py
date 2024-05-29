@@ -39,4 +39,6 @@ class LoginLocators:
     ERROR_MESSAGE_EMPTY_EMAIL = ("xpath", '//*[contains(text(), "Enter your email or mobile phone number")]')
     PRIVACY_NOTICE_PAGE = ("xpath", "//h1[text()='Amazon.com Privacy Notice'] ")
     PRIVACY_NOTICE_TEXT = 'Amazon.com Privacy Notice'
+    shoping_card_locators = ("css selector", "div[data-csa-c-item-id='amzn1.asin.B0CV244FWB']")
+
 

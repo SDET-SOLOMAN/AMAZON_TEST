@@ -150,3 +150,5 @@ class LoginPage(BasePage):
             print(page_name.text)
         return page_name.text
 
+
+

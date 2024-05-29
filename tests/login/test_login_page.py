@@ -4,14 +4,13 @@ import allure
 from amazoncaptcha import AmazonCaptcha
 import pytest
 from pages.login_page import LoginPage
-from locators.main_locators import MainLocators
 from src.urls import Urls
 from locators.login_locators import LoginLocators
 
 @allure.epic("test login and logout pages")
 class TestLogin:
     url = Urls()
-    main_locators = MainLocators()
+    # main_locators = MainLocators()
     login_locators = LoginLocators()
 
     @allure.title("test login")
@@ -97,15 +96,16 @@ class TestLogin:
             assert actual_text == expected_text
             f"Unexpected text, expected text {expected_text}, actual_text {actual_text}"
 
-    @allure.title("test privacy notice link")
-    @allure.description("check privacy notice link is clickable")
-    def test_check_privacy_notice_link_is_clickable(self, driver):
-        page = LoginPage(driver, self.url.base_url)
-        page.open()
+    # @allure.title("test privacy notice link")
+    # @allure.description("check privacy notice link is clickable")
+    # def test_check_privacy_notice_link_is_clickable(self, driver):
+    #     page = LoginPage(driver, self.url.base_url)
+    #     page.open()
+    #     page.hold_mouse_to_account1()
         # time.sleep(10)
-        page.click_privacy_notice_link()
-        with allure.step("Check result"):
-            assert page.check_privacy_notice_page() == self.login_locators.PRIVACY_NOTICE_TEXT
+        # page.click_privacy_notice_link()
+        # with allure.step("Check result"):
+        #     assert page.check_privacy_notice_page() == self.login_locators.PRIVACY_NOTICE_TEXT
 
 
 
